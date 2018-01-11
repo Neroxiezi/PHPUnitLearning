@@ -1,19 +1,19 @@
-<?php
+ <?php
 
-namespace tests;
-use Calculate;
-use PHPUnit\Framework\TestCase;
+ use pf\test\Calculate;
+ use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once './vendor/autoload.php';
 
+ /**
+  * 简单的类测试
+  * Class CalculateTest
+  */
+ class CalculateTest extends TestCase{
 
-
-class CalculatorTest extends TestCase
-{
-    public function testSum()
-    {
-        $obj = new Calculate;
-        $this->assertEquals(0, $obj->sum(0, 0));
-    }
-
-}
+     public function testSum(){
+         $sum = new Calculate();
+         $this->assertEquals($sum->sum(5,6),11);
+         $this->assertEquals($sum->sum(11,22),33);
+     }
+ }

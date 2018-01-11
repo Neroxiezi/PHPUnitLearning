@@ -4,10 +4,11 @@
  * 计算类
  * Class Calculate
  */
+namespace pf\test;
 class Calculate
 {
     /**
-     * 加法
+     * 一个简单的求和函数
      * @param $a
      * @param $b
      * @return mixed

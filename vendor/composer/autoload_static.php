@@ -14,6 +14,7 @@ class ComposerStaticInitee1fa7e76537fed62bb6ad38a02291fe
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
+            'pf\\test\\' => 8,
         ),
         'W' => 
         array (
@@ -40,6 +41,10 @@ class ComposerStaticInitee1fa7e76537fed62bb6ad38a02291fe
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+        ),
+        'pf\\test\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
