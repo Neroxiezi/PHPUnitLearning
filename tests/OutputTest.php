@@ -18,7 +18,7 @@ class OutputTest extends TestCase
 
     public function testExpectBarActualBaz()
     {
-        print 'baz';
+        print_r('bar');
         $this->expectOutputString('bar');
     }
 }
