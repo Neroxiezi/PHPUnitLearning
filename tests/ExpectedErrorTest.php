@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: 运营部
  * Date: 2018/7/26
- * Time: 13:21
+ * Time: 13:12
  *
  *
  *                      _ooOoo_
@@ -29,10 +29,13 @@
  *
  */
 
-class ArrayDiffTest extends \PHPUnit\Framework\TestCase
+class ExpectedErrorTest extends \PHPUnit\Framework\TestCase
 {
-    public function testEquality()
+    /**
+     * @expectedException
+     */
+    public function testFailingInclude()
     {
-        $this->assertEquals([1,2,4],[1,2,3]);
+        include 'not_existing_file.php';
     }
 }

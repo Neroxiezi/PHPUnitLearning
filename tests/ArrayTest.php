@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: 运营部
  * Date: 2018/7/26
- * Time: 13:21
+ * Time: 12:34
  *
  *
  *                      _ooOoo_
@@ -29,10 +29,18 @@
  *
  */
 
-class ArrayDiffTest extends \PHPUnit\Framework\TestCase
+class ArrayTest extends \PHPUnit\Framework\TestCase
 {
-    public function testEquality()
+    public function testPushAndPop()
     {
-        $this->assertEquals([1,2,4],[1,2,3]);
+        $stack = [];
+        $this->assertEquals(0, count($stack));
+
+        array_push($stack, 'foo');
+        $this->assertEquals('foo', $stack[count($stack)-1]);
+        $this->assertEquals(1, count($stack));
+
+        $this->assertEquals('foo', array_pop($stack));
+        $this->assertEquals(0, count($stack));
     }
 }

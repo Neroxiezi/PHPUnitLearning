@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: 运营部
  * Date: 2018/7/26
- * Time: 13:21
+ * Time: 14:59
  *
  *
  *                      _ooOoo_
@@ -29,10 +29,14 @@
  *
  */
 
-class ArrayDiffTest extends \PHPUnit\Framework\TestCase
+class assertArrayHasKey extends \PHPUnit\Framework\TestCase
 {
-    public function testEquality()
+    /**
+     * @expectedException
+     */
+    public function testFailure()
     {
-        $this->assertEquals([1,2,4],[1,2,3]);
+        $arr = ['bar'=>'C'];
+        $this->assertArrayHasKey('foo',$arr);
     }
 }

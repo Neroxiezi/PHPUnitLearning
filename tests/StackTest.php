@@ -1,53 +1,54 @@
 <?php
-
-
-use PHPUnit\Framework\TestCase;
-
 /**
- * 用 @depends 标注来表达依赖关系
- * Class StackTest
+ * Created by PhpStorm.
+ * User: 运营部
+ * Date: 2018/7/26
+ * Time: 12:58
  *
- * PHPUnit支持对测试方法之间的显式依赖关系进行声明。这种依赖关系并不是定义在测试方法的执行顺序中，而是允许生产者(producer)返回一个测试基境(fixture)的实例，并将此实例传递给依赖于它的消费者(consumer)们。
  *
- * 生产者(producer)，是能生成被测单元并将其作为返回值的测试方法。
+ *                      _ooOoo_
+ *                     o8888888o
+ *                     88" . "88
+ *                     (| ^_^ |)
+ *                     O\  =  /O
+ *                  ____/`---'\____
+ *                .'  \\|     |//  `.
+ *               /  \\|||  :  |||//  \
+ *              /  _||||| -:- |||||-  \
+ *              |   | \\\  -  /// |   |
+ *              | \_|  ''\---/''  |   |
+ *              \  .-\__  `-`  ___/-. /
+ *            ___`. .'  /--.--\  `. . ___
+ *          ."" '<  `.___\_<|>_/___.'  >'"".
+ *        | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+ *        \  \ `-.   \_ __\ /__ _/   .-` /  /
+ *  ========`-.____`-.___\_____/___.-`____.-'========
+ *                       `=---='
+ *  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *           佛祖保佑       永无BUG     永不修改
  *
- * 消费者(consumer)，是依赖于一个或多个生产者及其返回值的测试方法。
  */
-class StackTest extends TestCase
-{
-    /**
-     * 用PHPUnit 测试数组
-     */
-    public function testPushAndPop()
-    {
-        $stack = array();
-        $this->assertEquals(0, count($stack));
-        array_push($stack, 'foo');
-        $this->assertEquals('foo', $stack[count($stack) - 1]);
-        $this->assertEquals(1, count($stack));
-        $this->assertEquals('foo', array_pop($stack));
-        $this->assertEquals(0, count($stack));
-    }
 
+class StackTest extends \PHPUnit\Framework\TestCase
+{
     public function testEmpty()
     {
-        $stack = [];
-        $this->assertEmpty($stack);
-        return $stack;
+        $arr = [];
+        $this->assertEmpty($arr);
+        return $arr;
     }
 
     /**
      * @depends testEmpty
-     * 依赖于上面的测试结果
-     * @param array $stack
+     * @param array $arr
      * @return array
      */
-    public function testPush(array $stack)
+    public function testPush(array $arr)
     {
-        array_push($stack, 'foo');
-        $this->assertEquals('foo', $stack[count($stack) - 1]);
-        $this->assertEquals(1, count($stack));
-        return $stack;
+        array_push($arr, 'foo');
+        $this->assertEquals('foo', $arr[count($arr)-1]);
+        $this->assertNotEmpty($arr);
+        return $arr;
     }
 
     /**
@@ -57,7 +58,6 @@ class StackTest extends TestCase
     public function testPop(array $stack)
     {
         $this->assertEquals('foo', array_pop($stack));
-        $this->assertEquals(0, count($stack));
+        $this->assertEmpty($stack);
     }
-
 }

@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: 运营部
  * Date: 2018/7/26
- * Time: 13:21
+ * Time: 14:22
  *
  *
  *                      _ooOoo_
@@ -29,10 +29,31 @@
  *
  */
 
-class ArrayDiffTest extends \PHPUnit\Framework\TestCase
+class StackFixtureTest extends \PHPUnit\Framework\TestCase
 {
-    public function testEquality()
+    protected $stack;
+
+    protected function setUp()
     {
-        $this->assertEquals([1,2,4],[1,2,3]);
+        $this->stack = [];
+    }
+
+    public function testEmpty()
+    {
+        $this->assertTrue(empty($this->stack));
+    }
+
+    public function testPush()
+    {
+        array_push($this->stack,'foo');
+        $this->assertEquals('foo', $this->stack[count($this->stack) - 1]);
+        $this->assertFalse(empty($this->stack));
+    }
+
+    public function testPop()
+    {
+        array_push($this->stack, 'foo');
+        $this->assertEquals('foo', array_pop($this->stack));
+        $this->assertTrue(empty($this->stack));
     }
 }

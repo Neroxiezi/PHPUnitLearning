@@ -1,9 +1,11 @@
 <?php
+
+
 /**
  * Created by PhpStorm.
  * User: 运营部
  * Date: 2018/7/26
- * Time: 13:21
+ * Time: 15:05
  *
  *
  *                      _ooOoo_
@@ -29,10 +31,10 @@
  *
  */
 
-class ArrayDiffTest extends \PHPUnit\Framework\TestCase
+class assertClassHasAttribute extends \PHPUnit\Framework\TestCase
 {
-    public function testEquality()
+    public function testFailure()
     {
-        $this->assertEquals([1,2,4],[1,2,3]);
+        $this->assertClassHasAttribute('foo', Calculate::class,'不存在');
     }
 }

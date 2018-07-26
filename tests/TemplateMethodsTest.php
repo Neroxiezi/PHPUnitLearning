@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: 运营部
  * Date: 2018/7/26
- * Time: 13:04
+ * Time: 14:24
  *
  *
  *                      _ooOoo_
@@ -29,19 +29,53 @@
  *
  */
 
-class DependencyFailureTest extends \PHPUnit\Framework\TestCase
+class TemplateMethodsTest extends \PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass()
+    {
+        fwrite(STDOUT, __METHOD__ . "\n");
+    }
+
+    protected function setUp()
+    {
+        fwrite(STDOUT, __METHOD__ . "\n");
+    }
+
+    protected function assertPreConditions()
+    {
+        fwrite(STDOUT, __METHOD__ . "\n");
+    }
 
     public function testOne()
     {
+        fwrite(STDOUT, __METHOD__ . "\n");
         $this->assertTrue(true);
     }
 
-    /**
-     * @depends testOne
-     */
     public function testTwo()
     {
-        //$this->assertTrue(true);
+        fwrite(STDOUT, __METHOD__ . "\n");
+        $this->assertTrue(false);
+    }
+
+    protected function assertPostConditions()
+    {
+        fwrite(STDOUT, __METHOD__ . "\n");
+    }
+
+    protected function tearDown()
+    {
+        fwrite(STDOUT, __METHOD__ . "\n");
+    }
+
+    public static function tearDownAfterClass()
+    {
+        fwrite(STDOUT, __METHOD__ . "\n");
+    }
+
+    protected function onNotSuccessfulTest(Exception $e)
+    {
+        fwrite(STDOUT, __METHOD__ . "\n");
+        throw $e;
     }
 }

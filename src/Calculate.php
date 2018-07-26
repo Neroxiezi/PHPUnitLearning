@@ -4,9 +4,12 @@
  * 计算类
  * Class Calculate
  */
+
 namespace pf\test;
 class Calculate
 {
+    public $foo;
+
     /**
      * 一个简单的求和函数
      * @param $a
@@ -17,4 +20,5 @@ class Calculate
     {
         return $a + $b;
     }
+
 }
