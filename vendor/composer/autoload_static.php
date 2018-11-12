@@ -7,6 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInitee1fa7e76537fed62bb6ad38a02291fe
 {
     public static $files = array (
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
     );
 
@@ -20,9 +21,18 @@ class ComposerStaticInitee1fa7e76537fed62bb6ad38a02291fe
         array (
             'Webmozart\\Assert\\' => 17,
         ),
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Symfony\\Component\\Yaml\\' => 23,
+        ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+        ),
+        'N' => 
+        array (
+            'Noodlehaus\\' => 11,
         ),
         'M' => 
         array (
@@ -33,14 +43,23 @@ class ComposerStaticInitee1fa7e76537fed62bb6ad38a02291fe
             'Doctrine\\Instantiator\\' => 22,
             'DeepCopy\\' => 9,
         ),
+        'C' => 
+        array (
+            'Codedungeon\\PHPUnitPrettyResultPrinter\\' => 39,
+            'Codedungeon\\PHPCliColors\\' => 25,
+        ),
+        'B' => 
+        array (
+            'Bakyt\\' => 6,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'pf\\test\\' => 
         array (
@@ -50,9 +69,21 @@ class ComposerStaticInitee1fa7e76537fed62bb6ad38a02291fe
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
+        'Symfony\\Component\\Yaml\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/yaml',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Noodlehaus\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/hassankhan/config/src',
         ),
         'Monolog\\' => 
         array (
@@ -65,6 +96,18 @@ class ComposerStaticInitee1fa7e76537fed62bb6ad38a02291fe
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'Codedungeon\\PHPUnitPrettyResultPrinter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/codedungeon/phpunit-result-printer/src',
+        ),
+        'Codedungeon\\PHPCliColors\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/codedungeon/php-cli-colors/src',
+        ),
+        'Bakyt\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/2bj/phanybar/src',
         ),
     );
 
