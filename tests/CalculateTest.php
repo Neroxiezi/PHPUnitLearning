@@ -3,8 +3,6 @@
  use pf\test\Calculate;
  use PHPUnit\Framework\TestCase;
 
-require_once '../vendor/autoload.php';
-
  /**
   * 简单的类测试
   * Class CalculateTest

@@ -28,6 +28,7 @@
  *           佛祖保佑       永无BUG     永不修改
  *
  */
+namespace tests;
 
 class ArrayDiffTest extends \PHPUnit\Framework\TestCase
 {

@@ -3,7 +3,6 @@
 use pf\test\Stringcheck;
 use PHPUnit\Framework\TestCase;
 
-require_once '../vendor/autoload.php';
 /**
  * Created by PhpStorm.
  * User: 运营部
