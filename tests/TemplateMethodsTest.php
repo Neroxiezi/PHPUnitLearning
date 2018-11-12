@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: 运营部
- * Date: 2018/7/26
- * Time: 14:24
+ * Date: 2018/11/12
+ * Time: 17:01
  *
  *
  *                      _ooOoo_
@@ -29,7 +29,12 @@
  *
  */
 
-class TemplateMethodsTest extends \PHPUnit\Framework\TestCase
+namespace tests;
+
+
+use PHPUnit\Framework\TestCase;
+
+class TemplateMethodsTest extends TestCase
 {
     public static function setUpBeforeClass()
     {
@@ -50,32 +55,5 @@ class TemplateMethodsTest extends \PHPUnit\Framework\TestCase
     {
         fwrite(STDOUT, __METHOD__ . "\n");
         $this->assertTrue(true);
-    }
-
-    public function testTwo()
-    {
-        fwrite(STDOUT, __METHOD__ . "\n");
-        $this->assertTrue(false);
-    }
-
-    protected function assertPostConditions()
-    {
-        fwrite(STDOUT, __METHOD__ . "\n");
-    }
-
-    protected function tearDown()
-    {
-        fwrite(STDOUT, __METHOD__ . "\n");
-    }
-
-    public static function tearDownAfterClass()
-    {
-        fwrite(STDOUT, __METHOD__ . "\n");
-    }
-
-    protected function onNotSuccessfulTest(Exception $e)
-    {
-        fwrite(STDOUT, __METHOD__ . "\n");
-        throw $e;
     }
 }

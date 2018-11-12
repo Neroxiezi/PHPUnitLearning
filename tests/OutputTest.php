@@ -1,24 +1,50 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: 运营部
+ * Date: 2018/11/12
+ * Time: 16:52
+ *
+ *
+ *                      _ooOoo_
+ *                     o8888888o
+ *                     88" . "88
+ *                     (| ^_^ |)
+ *                     O\  =  /O
+ *                  ____/`---'\____
+ *                .'  \\|     |//  `.
+ *               /  \\|||  :  |||//  \
+ *              /  _||||| -:- |||||-  \
+ *              |   | \\\  -  /// |   |
+ *              | \_|  ''\---/''  |   |
+ *              \  .-\__  `-`  ___/-. /
+ *            ___`. .'  /--.--\  `. . ___
+ *          ."" '<  `.___\_<|>_/___.'  >'"".
+ *        | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+ *        \  \ `-.   \_ __\ /__ _/   .-` /  /
+ *  ========`-.____`-.___\_____/___.-`____.-'========
+ *                       `=---='
+ *  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *           佛祖保佑       永无BUG     永不修改
+ *
+ */
+
+namespace tests;
+
 
 use PHPUnit\Framework\TestCase;
 
-/**
- * Created by PhpStorm.
- * User: 南丞
- * Date: 2018/1/12
- * Time: 11:59
- */
 class OutputTest extends TestCase
 {
     public function testExpectFooActualFoo()
     {
-        $this->expectException('foo');
-        print_r('foo');
+        $this->expectOutputString('foo');
+        print 'foo';
     }
 
     public function testExpectBarActualBaz()
     {
-        print_r('bar');
         $this->expectOutputString('bar');
+        print 'bar';
     }
 }

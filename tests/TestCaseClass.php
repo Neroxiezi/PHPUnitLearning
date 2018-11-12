@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: 运营部
- * Date: 2018/7/27
- * Time: 11:16
+ * Date: 2018/11/12
+ * Time: 16:56
  *
  *
  *                      _ooOoo_
@@ -29,11 +29,26 @@
  *
  */
 
-class Sample1Test extends \PHPUnit\Framework\TestCase
+namespace tests;
+
+
+use PHPUnit\Framework\TestCase;
+
+class TestCaseClass extends TestCase
 {
-    public function testSomething()
+    public function provider()
     {
-        $this->assertTrue(true,' 这个我真的不知道有啥暖用');
-        $this->markTestIncomplete('此项目现在暂停了');
+        return [
+            'my named data' => [true],
+            'my data' => [true]
+        ];
+    }
+
+    /**
+     * @dataProvider provider
+     */
+    public function testMethod($data)
+    {
+        $this->assertTrue($data);
     }
 }

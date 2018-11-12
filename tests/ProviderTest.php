@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: 运营部
- * Date: 2018/7/26
- * Time: 14:59
+ * Date: 2018/11/12
+ * Time: 16:11
  *
  *
  *                      _ooOoo_
@@ -29,14 +29,26 @@
  *
  */
 
-class assertArrayHasKey extends \PHPUnit\Framework\TestCase
+namespace tests;
+
+
+use PHPUnit\Framework\TestCase;
+
+class ProviderTest extends TestCase
 {
-    /**
-     * @expectedException
-     */
-    public function testFailure()
+    public function provider()
     {
-        $arr = ['bar'=>'C'];
-        $this->assertArrayHasKey('foo',$arr);
+        return [['provider1'], ['provider2']];
+    }
+
+    /**
+     * @dataProvider provider
+     */
+    public function testConsumer()
+    {
+        $this->assertEquals(
+            ['provider1'],
+            func_get_args()
+        );
     }
 }
